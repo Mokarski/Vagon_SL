@@ -1,0 +1,32 @@
+Command packet:
+| Packet header | Packet data |
+
+Packet header:
+| Packet length : 16bit | Number of commands : 16bit |
+
+Packet data:
+| Command entry | Signal name | x Number of commands
+
+Command entry:
+| Command 8bit x 3 | Number of parameters : 16bit | Parameters : 16bit x [Number of parameters] |
+
+Signal name:
+| Signal name length : 16bit | Signal name : 8bit x [Signal name length] |
+
+-------------------------------------------------------------------------------------------------------
+
+Response packet
+| Packet header | Packet data |
+
+Packet header:
+| Packet length : 16bit | Command status : 8bit x 3 | Number of signals : 16bit |
+
+Packet data:
+| Signal name | Signal description | x Number of signals
+
+Signal name:
+| Signal name length : 16bit | Signal name : 8bit x [Signal name length] |
+
+Signal description:
+| value : 16bit | rw : 16bit | reg_type : 16bit | reg_addr : 16bit | reg_bit : 16bit | dev_type : 16bit | dev_mb_id : 16bit |
+
